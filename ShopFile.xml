@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE seele[
+<!--Т.к. я не нашел решения ошибки, решил оформить документ в формате DTD-->
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT product (name)>
+<!ELEMENT shop (product+)>
+<!ATTLIST product
+ amount CDATA #REQUIRED
+ >
+ <!ATTLIST product
+ price CDATA #REQUIRED
+ >
+ <!ATTLIST product
+ productType (electronic|clothes|building) #REQUIRED
+ >
+ <!ENTITY S "Smartphone">
+ <!ENTITY C "Computer">
+ <!ENTITY D "Dress">
+ <!ENTITY W "Window">
+ <!ENTITY T "T-shirt">
+]>
+<seele>
+<shop>
+<product price="7" amount="50" productType="clothes">
+<name>&T;</name>
+</product>
+<product price="200" amount="10" productType="electronic">
+<name>&S;</name>
+</product>
+<product price="20" amount="30" productType="clothes">
+<name>&D;</name>
+</product>
+<product price="30" amount="100" productType="building">
+<name>&W;</name>
+</product>
+<product price="1000" amount="5" productType="electronic">
+<name>&C;</name>
+</product>
+</shop>
+</seele>
